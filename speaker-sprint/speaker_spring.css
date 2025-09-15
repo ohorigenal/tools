@@ -1,0 +1,178 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: #0f1225;
+  color: #e9ecf1;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+/* body内 */
+#app {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* ヘッダー */
+header {
+  padding: 10px 14px;
+  border-bottom: 1px solid #232846;
+  background: #121633;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* メイン */
+main {
+  position: relative;
+}
+
+/* Phaser ブロック */
+#phaser-parent {
+  position: absolute;
+  inset: 0;
+}
+
+/* セットアップパネル */
+.panel {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(18, 22, 51, 0.92);
+  border: 1px solid #30365f;
+  border-radius: 12px;
+  padding: 12px;
+  width: min(380px, 92vw);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.panel h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+/* セットアップパネル内 */
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+/* Speaker入力エリア */
+textarea {
+  width: auto;
+  min-height: 140px;
+  resize: vertical;
+  border-radius: 10px;
+  border: 1px solid #3b4272;
+  padding: 10px;
+  background: #0f1330;
+  color: #e9ecf1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* アクションボタンブロック */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+button {
+  appearance: none;
+  border: 1px solid #4450a3;
+  background: linear-gradient(#5563d6, #3d48a8);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#btnStart {
+  background: linear-gradient(90deg, #ff4e50, #ffb199);
+}
+
+/* 結果モーダル */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+/* 結果カードブロック */
+.card {
+  width: min(520px, 92vw);
+  background: #141949;
+  border: 1px solid #2b3270;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+/* 順位表示 */
+ol {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+ol li {
+  margin: 6px 0;
+  text-indent: 4px;
+}
+ol li:first-child {
+  color: #ffd700; /* 金色 */
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 0 0 1px #e0e0ff; /* 輝きを追加 */
+}
+ol li:nth-child(2) {
+  color: #d6d6e8; /* 明るめのシルバー */
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 0 1px #e0e0ff; /* 輝きを追加 */
+}
+ol li:nth-child(3) {
+  color: #cd7f32; /* 銅色 */
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 0 0 1px #e0e0ff; /* 輝きを追加 */
+}
+
+/* 結果ボタンブロック */
+.center {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/*　ヒント */
+.legend {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translate(-50%, -50%);
+  background: rgba(18, 22, 51, 0.7);
+  border: 1px solid #30365f;
+  border-radius: 12px;
+  padding: 8px 30px;
+  font-size: 16px;
+}
