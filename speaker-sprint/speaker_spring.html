@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speaker Spring</title>
+  <link rel="stylesheet" href="speaker_sprint.css" />
+</head>
+<body>
+
+<div id="app">
+  <header>
+    <div class="title">Speaker Sprint</div>
+  </header>
+  <main>
+    <div id="phaser-parent"></div>
+
+    <div class="panel" id="setupPanel">
+      <h2>登壇者リスト</h2>
+      <div class="row">
+        <textarea id="namesInput" placeholder=""></textarea>
+        <div class="controls">
+          <button id="btnStart">レース開始</button>
+          <button id="btnDemo">デモ名を入れる</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend">🏁 ゴール順 = 発表順</div>
+
+    <div class="overlay" id="resultOverlay">
+      <div class="card">
+        <h3>発表順</h3>
+        <ol id="orderList"></ol>
+        <div class="center">
+          <button id="btnEdit" class="secondary">メンバーを編集</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.80.0/dist/phaser.min.js"></script>
+<script src="./speaker_sprint.js"></script>
+</body>
+</html>
